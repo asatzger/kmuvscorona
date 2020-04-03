@@ -6,7 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { HashLink as Link } from 'react-router-hash-link';
 import CookieConsent from "react-cookie-consent";
-
 import TargetGroupList from './TargetGroupList'
 
 
@@ -21,7 +20,7 @@ class Home extends Component {
     	<div>
           <Container maxWidth="sm" class="hero">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              KMUs Vs. Corona
+              KMUs vs. Corona
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
               Wir sammeln Ideen, Hilfsmittel, Finanzierungsquellen und mehr, um Klein- und Mittelstandsunternehmen
@@ -79,8 +78,6 @@ class Home extends Component {
 			        </Link>
             </CookieConsent>
         </div>
-
-
     	</div>
 
     )

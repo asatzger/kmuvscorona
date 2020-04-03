@@ -9,19 +9,23 @@ import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
-    paddingTop: "25px",
-    paddingBottom : "25px"
+    paddingTop: "2rem",
+    paddingBottom: "0.5rem"
   },
   down: {
-    paddingBottom : "25px"
-  }
+    paddingBottom : "1.5rem",
+    marginLeft: "1rem"
+  },
+  title:{
+    marginLeft: "1rem"
+  },
 
 });
 
 export default withStyles(styles)(class ProblemDetail extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.targetgroupid)
+    console.log(this.props.targetgroupslug)
     this.state = {
       title: '',
       description: '',
@@ -62,7 +66,7 @@ export default withStyles(styles)(class ProblemDetail extends Component {
 
  checkIfSpecific (solution)  {
     return (solution.specificForTargetGroups.length === 0) 
-    || (typeof solution.specificForTargetGroups.find(tgroup => tgroup === this.props.targetgroupid) !== "undefined");
+    || (typeof solution.specificForTargetGroups.find(tgroup => tgroup === this.props.targetgroupslug) !== "undefined");
 }
 
 
@@ -70,7 +74,7 @@ export default withStyles(styles)(class ProblemDetail extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography variant="h5">{this.state.title}</Typography>
+        <Typography className={classes.title} variant="h5">{this.state.title}</Typography>
         <Typography className={classes.down}>{this.state.description}</Typography>
         <SolutionsList solutions={this.state.solutions}/>    
         

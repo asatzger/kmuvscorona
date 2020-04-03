@@ -52,7 +52,7 @@ export default class FeedbackForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    const user = "user_4Di9yfv15C5InFaLCNNbG";
+    const user = process.env.REACT_APP_EMAILUSER;
     this.sendFeedback(
       this.state.name,
       this.state.email,
@@ -61,9 +61,9 @@ export default class FeedbackForm extends Component {
     );
   }
 
-  sendFeedback(senderName, senderEmail, feedback, user) {
+  sendFeedback(senderName, senderEmail, feedback, user) { // info@kmuvscorona.de
     window.emailjs.send("default_service", "contact_form", {"message_html":feedback,
-    "senderMail":senderEmail, "from_name":senderName, "recipientMail":'info@kmuvscorona.de'}, user)
+    "senderMail":senderEmail, "from_name":senderName, "recipientMail":'lennart2912@gmail.com'}, user)
       .then(res => {
         console.log("E Mail Sent successfully");
       })
